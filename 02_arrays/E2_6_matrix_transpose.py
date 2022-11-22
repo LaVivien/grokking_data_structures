@@ -11,7 +11,7 @@ def transpose(x) :
     return y
 
 # test
-board =[[1,8,3,5],
+board = [[1,8,3,-5],
         [4,1,3,3],
         [2,2,1,5]]
 t = transpose(board)

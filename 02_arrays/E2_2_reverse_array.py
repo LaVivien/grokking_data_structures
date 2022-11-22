@@ -20,9 +20,3 @@ str = "String"
 str_array = list(str) # convert string to list of characters
 rev_str = reverse_array(str_array) 
 print(rev_str)
-
-#test reverse words
-words = "This is a string"
-words_array = words.split(' ') #convert string into list of string
-rev_words = reverse_array(words_array) 
-print(rev_words)

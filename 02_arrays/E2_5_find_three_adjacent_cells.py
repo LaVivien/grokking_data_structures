@@ -19,7 +19,7 @@ def print_board(board):
         print(s)
 
 #Time O(mxn), Space O(1)
-def checkBoard(board) :  
+def check_board(board) :  
     rows = len(board)
     cols = len(board[0])
 
@@ -41,7 +41,8 @@ def checkBoard(board) :
             if board[i][j] == board[i-1][j+1] and board[i][j] == board[i+1][j-1]:
                 return True            
     return False
-			
+
+# test		
 board = initialize_board(5,4)
 print_board(board)
-print(checkBoard(board))
+print(check_board(board))

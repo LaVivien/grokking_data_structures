@@ -1,6 +1,6 @@
 # Find all pairs of integers within an array which sum to a specified value.
 
-#Time O(n*logn), Space O(1)
+#Use sort and two pointers, Time O(n*logn), Space O(1)
 def two_sum(arr, target):
     arr.sort()
     low = 0
