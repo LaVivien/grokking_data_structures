@@ -37,11 +37,10 @@ class DoublyLinkedList:
         
     # Insert after the node, Time O(n), Space O(1)
     def insert_after (self, curr, value):                              
-        if curr == None:          
+        if curr == None:          #invalid input
             return
         newNode = DllNode(value)        
-        if curr == self.tail:
-            newNode.next = None        
+        if curr == self.tail:      #edge case, add after tail
             self.tail = newNode             
         else:
             newNode.next = curr.next
@@ -71,7 +70,7 @@ class DoublyLinkedList:
 
     # Delete the first found item, Time O(n), Space O(1)
     def delete(self, key):   
-        if self.head == None:
+        if self.head == None:  #edge case, empty list
             return                           
         curr = self.head          
         while curr.data != key:
@@ -125,7 +124,7 @@ class DoublyLinkedList:
         return None    
 	
 	# Print both directions, Time O(n), Space O(1) 
-    def display(self):
+    def traverse(self):
         if self.head == None:
             print ("The list is empty")
             return
@@ -142,46 +141,48 @@ class DoublyLinkedList:
             print(str(curr.data), end = ' ')
             curr = curr.pre
         print()
-            
-#Initialize, insert and print 
-dll = DoublyLinkedList()
-dll.insert_first(4)
-dll.insert_last(64)
-dll.insert_last(-6)
-dll.insert_last(3)
-dll.insert_last(32)
-dll.insert_last(-6)
-dll.insert_last(11)
-dll.insert_first(19)
-dll.display();            
 
-print("delete first and last")                 
-dll.delete_first()
-dll.delete_last()
-dll.display()
+# test
+if __name__ == '__main__':       
+    #Initialize, insert and print 
+    dll = DoublyLinkedList()
+    dll.insert_first(4)
+    dll.insert_last(64)
+    dll.insert_last(-6)
+    dll.insert_last(3)
+    dll.insert_last(32)
+    dll.insert_last(-6)
+    dll.insert_last(11)
+    dll.insert_first(19)
+    dll.traverse();             
 
-#add first and last again
-dll.insert_first(51)
-dll.insert_last(-6)
-dll.display()
+    print("delete first and last")                 
+    dll.delete_first()
+    dll.delete_last()
+    dll.traverse()
 
-#search and delete
-key = -6
-node = dll.search(key)
-print("Search " + str(key) + " :" + str(node))
+    #add first and last again
+    dll.insert_first(51)
+    dll.insert_last(-6)
+    dll.traverse()
 
-dll.delete_all_keys(key)
-print("Delete " + str(key) + " :" + str(node))
-dll.display()
+    #search and delete
+    key = -6
+    node = dll.search(key)
+    print("Search " + str(key) + " :" + str(node))
 
-#insert after
-print("insert after")   
-key = 4
-node = dll.search(key)
-dll.insert_after(node, 5)
-dll.display()
+    dll.delete_all_keys(key)
+    print("Delete " + str(key) + " :" + str(node))
+    dll.traverse()
 
-#delete by key
-dll.delete(key)
-print("Delete node:" + str(node))
-dll.display()
+    #insert after
+    print("insert after")   
+    key = 51
+    node = dll.search(key)
+    dll.insert_after(node, 5)
+    dll.traverse()
+
+    #delete by key
+    dll.delete(key)
+    print("Delete node:" + str(node))
+    dll.traverse()

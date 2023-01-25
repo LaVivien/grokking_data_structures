@@ -1,6 +1,6 @@
 # Merge two sorted array into one sorted array in place
 
-#Merge in place, Time O(m+n), Space O(1)
+# Merge in place, Time O(m+n), Space O(1)
 def merge_in_place(a, b, m, n) :
     k = m + n - 1
     i = m - 1 

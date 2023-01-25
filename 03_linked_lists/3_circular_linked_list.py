@@ -76,7 +76,7 @@ class CircularLinkedList:
         return None
     
     # Print the list, Time O(n), Space O(1)
-    def display(self):
+    def print(self):
         if self.head == None: 
             print("empty list")
             return
@@ -87,23 +87,25 @@ class CircularLinkedList:
             if curr == self.head:
                 break
         print()
-    
-#Initialize and insert
-cll = CircularLinkedList()
-cll.insert_last(3)
-cll.insert_last(64)
-cll.insert_last(32)
-cll.insert_last(19)
-cll.insert_last(-5)
-cll.display()
 
-cll.insert_after(19, 33)
-cll.display()
+# test
+if __name__ == '__main__':
+    #Initialize and insert
+    cll = CircularLinkedList()
+    cll.insert_last(3)
+    cll.insert_last(64)
+    cll.insert_last(32)
+    cll.insert_last(19)
+    cll.insert_last(-5)
+    cll.print()
 
-# search and Delete by key
-key = 19
-node = cll.search(key)
-print("found "+ str(key) + ": " + str(node))
+    cll.insert_after(19, 33)
+    cll.print()
 
-cll.delete(key)
-cll.display()
+    # search and Delete by key
+    key = 32
+    node = cll.search(key)
+    print("found "+ str(key) + ": " + str(node))
+
+    cll.delete(key)
+    cll.print()

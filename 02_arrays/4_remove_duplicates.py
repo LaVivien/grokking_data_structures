@@ -1,10 +1,8 @@
-# Given an array, remove the duplicates
+# Given an array or list, remove the duplicates
 
 #use set as auxiliary data structure, Time O(n), Space O(n)
 def remove_dup_set(arr):
-    new_set = set()
-    for x in arr:
-        new_set.add(x)
+    new_set = set(arr)
     return new_set
 
 #use sorting and in place, Time O(nlogn), Space O(1)
@@ -18,7 +16,7 @@ def remove_dup_in_place(arr) :
     return i+1
 
 # test using set
-arr = [1, 5, 3, 6, 3, 5, 6, 1]
+arr = [1, 5, 3, 6, 5, 3, 5, 6, 1, 5]
 set = remove_dup_set(arr)
 print(set)
 

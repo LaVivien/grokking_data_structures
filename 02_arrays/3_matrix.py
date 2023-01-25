@@ -44,18 +44,19 @@ class Matrix :
             print(s)
 	    
 # test
-input = [[ 1,  3,  5,  7,  9],
-         [12, 12, 15, 16, 20],
-         [21, 22, 23, 23, 25],
-         [30, 32, 35, 40, 45]]
+if __name__ == '__main__':
+    input = [[ 1,  3,  5,  7,  9],
+            [12, 12, 15, 16, 20],
+            [21, 22, 23, 23, 25],
+            [30, 32, 35, 40, 45]]
 
-matrix = Matrix(input)
-matrix.display()
+    matrix = Matrix(input)
+    matrix.display()
 
-#search
-key = 32
-found_pos = matrix.search_matrix(key)
-print("Find "+ str(key) + " (linear search) at: " + str(found_pos[0]) + "," + str(found_pos[1]))
+    #search
+    key = 32
+    found_pos = matrix.search_matrix(key)
+    print("Find "+ str(key) + " (linear search) at: " + str(found_pos[0]) + "," + str(found_pos[1]))
 
-found_pos_bs = matrix.search_sorted_matrix(key)
-print("Find "+ str(key) + " (binary search) at: " + str(found_pos_bs[0]) + "," + str(found_pos_bs[1]))
+    found_pos_bs = matrix.search_sorted_matrix(key)
+    print("Find "+ str(key) + " (binary search) at: " + str(found_pos_bs[0]) + "," + str(found_pos_bs[1]))

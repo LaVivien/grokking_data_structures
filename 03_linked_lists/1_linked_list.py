@@ -84,43 +84,45 @@ class LinkedList :
         return None
     
     # Print the list, Time O(n), Space O(1)
-    def display(self):
+    def traverse(self):
         curr = self.head
         while curr != None:
             print(str(curr.data), end = ' ')
             curr = curr.next
         print()
 
-# Initialize, insert, print 
-ll = LinkedList()
-ll.insert_first(3)
-ll.insert_last(64)
-ll.insert_last(32)
-ll.insert_last(11)
-ll.insert_last(3)
-ll.insert_last(19)
-ll.insert_last(32)
-ll.insert_first(-5)
-ll.display()
+# test
+if __name__ == '__main__':
+    # Initialize, insert, print 
+    ll = LinkedList()
+    ll.insert_first(3)
+    ll.insert_last(64)
+    ll.insert_last(32)
+    ll.insert_last(11)
+    ll.insert_last(3)
+    ll.insert_last(19)
+    ll.insert_last(32)
+    ll.insert_first(-5)
+    ll.traverse()
 
-ll.delete_first()
-ll.display()
+    ll.delete_first()
+    ll.traverse()
 
-# Delete by key
-key = 3
-print("delete by key " + str(key))
-ll.delete(key)
-ll.display()
+    # Delete by key
+    key = 3
+    print("delete by key " + str(key))
+    ll.delete(key)
+    ll.traverse()
 
-# Search
-key = 11
-node = ll.search(key)
-print("find value: "+ str(node))
+    # Search
+    key = 11
+    node = ll.search(key)
+    print("find value: "+ str(node))
 
-# Insert after
-ll.insert_after(node, -99)
-ll.display()
+    # Insert after
+    ll.insert_after(node, -99)
+    ll.traverse()
 
-# Delete all matched keys
-ll.delete_all_keys(32)
-ll.display()
+    # Delete all matched keys
+    ll.delete_all_keys(32)
+    ll.traverse()

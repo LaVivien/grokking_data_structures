@@ -1,18 +1,23 @@
 # calculate the average of the numbers in an array.
 
-#Time O(n), Sapce O(1)
-def get_average(arr):
-    count = 0
+# use Array class, Time O(n), Sapce O(1)
+my_array = __import__('1_array')
+def get_average_array(arr):
+    count = arr.num_of_items()
     sum = 0
-    for x in arr:
+    for i in range(0, count):
+        x = arr.get(i)
         sum += x
-        count += 1
     return sum/count
 
-# test
-arr = [14, 28, 33, 16, 5] 
-print(get_average(arr))
+#test use Array class
+grade_array = my_array.Array(5)
+grade_array.add(14)
+grade_array.add(28)
+grade_array.add(33)
+grade_array.add(16)
+grade_array.add(5)
+print(get_average_array(grade_array))
 
-arr = [4.12, 8.2, 3, 6.4, 5.2] 
-print(get_average(arr))
+
 
