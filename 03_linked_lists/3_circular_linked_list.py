@@ -41,6 +41,16 @@ class CircularLinkedList:
                 print("cannot find " + str(key) +", stop insert.")
                 break
 
+    # delete item at head, Time O(1), Space O(1)
+    def delete_first(self):
+        if self.head == None:
+            return
+        if self.last == self.head: #  last node
+            self.head = self.last=None
+        else:
+            self.head = self.head.next
+            self.last.next = self.head 
+
     # Delete the first found item, Time O(n), Space O(1)
     def delete(self, key):
         node = self.search(key)
@@ -107,5 +117,11 @@ if __name__ == '__main__':
     node = cll.search(key)
     print("found "+ str(key) + ": " + str(node))
 
+    #delete
     cll.delete(key)
     cll.print()
+
+    cll.delete_first()
+    cll.print()
+
+
