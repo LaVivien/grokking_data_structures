@@ -61,19 +61,6 @@ class LinkedList :
             prev = curr
             curr = curr.next
 
-    # Delete all notes by key, Time O(n), Space O(1)
-    def delete_all_keys(self, key): 
-        curr = self.head
-        prev = None  
-        while curr != None:
-            if curr.data == key:
-                if prev == None: #edge case, first node
-                    self.head = curr.next
-                else:
-                    prev.next = curr.next
-            prev = curr
-            curr = curr.next
-
     # Search by key, return the first found item, Time O(n), Space O(1)
     def search(self, key):
         curr = self.head
@@ -123,6 +110,3 @@ if __name__ == '__main__':
     ll.insert_after(node, -99)
     ll.traverse()
 
-    # Delete all matched keys
-    ll.delete_all_keys(32)
-    ll.traverse()
